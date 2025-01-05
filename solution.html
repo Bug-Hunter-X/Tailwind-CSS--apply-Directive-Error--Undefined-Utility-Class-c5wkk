@@ -1,0 +1,26 @@
+The solution depends on the root cause. If it's a typo, simply correct the class name. If it's a missing plugin or configuration, add the plugin and configure Tailwind to include it. Below is an example assuming the error is a typo.
+
+**Incorrect (bug.html):**
+```html
+<div class="@apply bg-red-500">
+</div>
+```
+
+**Corrected (solution.html):**
+```html
+<div class="@apply bg-red-500">
+</div>
+```
+
+**tailwind.config.js:**  Ensure your config is correct and includes the `bg-red-500` utility if you're not using a plugin that provides it. If you are using a plugin make sure to correctly configure it.  For instance:
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [ "./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+Note that plugins must be listed in the `plugins` array in `tailwind.config.js`.  This is often missed.

@@ -1,0 +1,8 @@
+This error occurs when using Tailwind CSS's `@apply` directive with a utility class that isn't defined in your Tailwind configuration file.  This often happens if you've misspelled a class name, or if you've forgotten to include a plugin that provides the class. For example:
+
+```html
+<div class="@apply bg-red-500">
+</div>
+```
+
+If `bg-red-500` isn't defined in your `tailwind.config.js` file (or your `tailwind.config.cjs` file), you'll get an error.  Also, if you're using a plugin that adds this utility class, and you've not included the plugin correctly in your configuration, this error could also occur.
